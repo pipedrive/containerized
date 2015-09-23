@@ -28,10 +28,7 @@ describe('containerized', function() {
 	} else {
 
 		it('should detect async whether it runs inside a Docker container', function(done) {
-			var containerized = proxyquire('../index.js', {
-				'./lib/cmd': 'echo "10:net_prio:/docker/a9f22af020125424921a9dac4d8ab8681f7d7866da86d51e1fd97db857a51d1c\n9:perf_event:/docker/a9f22af020125424921a9dac4d8ab8681f7d7866da86d51e1fd97db857a51d1c"',
-				'./lib/hostname': function() { return 'a9f22af02012'; }
-			});
+			var containerized = proxyquire('../index.js', mockContainer);
 
 			containerized(function(err, result) {
 				assert.equal(err, null);
@@ -41,10 +38,7 @@ describe('containerized', function() {
 		});
 
 		it('should detect async whether it does not run inside a Docker container', function(done) {
-			var containerized = proxyquire('../index.js', {
-				'./lib/cmd': 'echo "10:net_prio:/\n9:perf_event:/"',
-				'./lib/hostname': function() { return 'a9f22af02012'; }
-			});
+			var containerized = proxyquire('../index.js', mockNoContainer);
 
 			containerized(function(err, result) {
 				assert.equal(err, null);
