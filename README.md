@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/containerized.svg)](http://badge.fury.io/js/containerized)
+[![npm version](https://badge.fury.io/js/containerized.svg)](http://badge.fury.io/js/containerized) [ ![Codeship Status for pipedrive/containerized](https://codeship.com/projects/fd2af2e0-4470-0133-bbf0-766e5d0e1417/status?branch=master)](https://codeship.com/projects/104396)
 
 # Containerized
 
