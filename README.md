@@ -45,4 +45,3 @@ MIT.
 ## Contribute?
 
 You're welcome! Make sure you keep an eye on the tests.
-
