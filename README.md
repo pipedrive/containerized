@@ -26,6 +26,16 @@ containerized(function(err, result) {
 });
 ```
 
+For achieving a synchronous interface in Node <= 0.10, use [deasync](https://www.npmjs.com/package/deasync) module:
+```
+var deasync = require('deasync');
+var containerized = deasync(require('containerized'));
+
+if (containerized()) {
+	...
+}
+```
+
 ### In node >= v0.12.x
 
 Starting from node 0.12.x, where child_process.execSync is available, containerized offers synchronous interface, so it will be a lot easier to use.
