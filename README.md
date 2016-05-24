@@ -27,7 +27,7 @@ containerized(function(err, result) {
 ```
 
 For achieving a synchronous interface in Node <= 0.10, use [deasync](https://www.npmjs.com/package/deasync) module:
-```
+```javascript
 var deasync = require('deasync');
 var containerized = deasync(require('containerized'));
 
