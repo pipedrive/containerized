@@ -27,6 +27,6 @@ notifications:
     on_success: change
     on_failure: change
 
-script: "npm run-script test-travis"
+script: "npm run-script test"
 
 sudo: false
