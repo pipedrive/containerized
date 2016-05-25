@@ -4,7 +4,9 @@ var containerized = null,
 	hostname = require('./lib/hostname')();
 
 module.exports = function(callback) {
-	var returnVal;
+	var returnVal,
+		err,
+		cgroups = '';
 	
 	if (typeof callback !== 'function') {
 		callback = function() {};
@@ -14,8 +16,13 @@ module.exports = function(callback) {
 		// not determined yet. must determine and cache.
 		if (child_process.execSync) {
 			// sync (node > 0.10.x)
-			returnVal = determine(child_process.execSync(cmd).toString('utf8'));
-			callback(null, returnVal);
+			try {
+				cgroups = child_process.execSync(cmd);
+			} catch (e) {
+				err = e;
+			}
+			returnVal = determine(cgroups.toString('utf8'));
+			callback(err, returnVal);
 			return returnVal;
 		} else {
 			// async (node <= 0.10.x)
