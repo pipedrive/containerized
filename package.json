@@ -1,6 +1,6 @@
 {
   "name": "containerized",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A microlibrary to detect whether Node.js runs inside a Docker container or not",
   "main": "index.js",
   "scripts": {
