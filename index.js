@@ -5,6 +5,10 @@ var containerized = null,
 
 module.exports = function(callback) {
 	var returnVal;
+	
+	if (typeof callback !== 'function') {
+		callback = function() {};
+	}
 
 	if (containerized === null) {
 		// not determined yet. must determine and cache.
