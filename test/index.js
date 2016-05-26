@@ -4,6 +4,7 @@ var assert = require('assert'),
 	child_process = require('child_process'),
 	_ = require('lodash'),
 
+	hostname = 'a9f22af02012',
 	mockContainer = {
 		cgroups: '10:net_prio:/docker/a9f22af020125424921a9dac4d8ab8681f7d7866da86d51e1fd97db857a51d1c\n9:perf_event:/docker/a9f22af020125424921a9dac4d8ab8681f7d7866da86d51e1fd97db857a51d1c',
 	},
@@ -16,7 +17,7 @@ var mockContainerAsync = _.extend({}, mockContainer, {
 		return 'echo "' + mockContainer.cgroups + '"';
 	},
 	'./lib/hostname': function() {
-		return 'a9f22af02012';
+		return hostname;
 	}
 });
 
@@ -25,7 +26,7 @@ var mockNoContainerAsync = _.extend({}, mockNoContainer, {
 		return 'echo "' + mockNoContainer.cgroups + '"';
 	},
 	'./lib/hostname': function() {
-		return 'a9f22af02012';
+		return hostname;
 	}
 });
 
@@ -36,7 +37,7 @@ var mockContainerSync = _.extend({}, mockContainer, {
 		}
 	},
 	'./lib/hostname': function() {
-		return 'a9f22af02012';
+		return hostname;
 	}
 });
 
@@ -47,7 +48,7 @@ var mockNoContainerSyncForError = _.extend({}, mockNoContainer, {
 		}
 	},
 	'./lib/hostname': function() {
-		return 'a9f22af02012';
+		return hostname;
 	}
 });
 
@@ -58,7 +59,7 @@ var mockNoContainerSync = _.extend({}, mockNoContainer, {
 		}
 	},
 	'./lib/hostname': function() {
-		return 'a9f22af02012';
+		return hostname;
 	}
 });
 
