@@ -16,8 +16,6 @@ npm install containerized
 
 ### Node.js versions 0.12, 4.x, 5.x, 6.x, ...
 
-Starting from node 0.12.x, where child_process.execSync is available, containerized offers synchronous interface, so it will be a lot easier to use.
-
 ```javascript
 var containerized = require('containerized');
 
