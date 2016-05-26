@@ -4,7 +4,8 @@
   "description": "A microlibrary to detect whether Node.js runs inside a Docker container or not",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "test-travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,11 @@
   "homepage": "https://github.com/pipedrive/containerized#readme",
   "devDependencies": {
     "assert": "^1.3.0",
+    "coveralls": "^2.11.9",
+    "istanbul": "^0.4.3",
+    "lodash": "^4.13.1",
     "mocha": "^2.3.3",
-    "proxyquire": "^1.7.2"
+    "proxyquire": "^1.7.2",
+    "sinon": "^1.17.4"
   }
 }

@@ -1,8 +1,12 @@
-[![npm version](https://badge.fury.io/js/containerized.svg)](http://badge.fury.io/js/containerized) [![Build Status](https://travis-ci.org/pipedrive/containerized.svg?branch=master)](https://travis-ci.org/pipedrive/containerized)
+[![npm version](https://badge.fury.io/js/containerized.svg)](http://badge.fury.io/js/containerized) [![Build Status](https://travis-ci.org/pipedrive/containerized.svg?branch=master)](https://travis-ci.org/pipedrive/containerized) [![Coverage Status](https://coveralls.io/repos/github/pipedrive/containerized/badge.svg?branch=master)](https://coveralls.io/github/pipedrive/containerized?branch=master)
 
 # Containerized
 
-Detect whether your Node.js process is containerized — e.g. whether it runs inside a Docker container. Works with all Node.js versions >= 0.10.x.
+ * **Detect whether your Node.js process runs inside a Docker container or not**
+ * Detection is based on existence of Docker-specific cgroups
+ * Well tested (aiming at 100% line, function, statement and branch coverage)
+ * Works with all Node.js versions >= 0.10.x.
+ * Tested in 0.10.x, 4.x, 5.x, 6.x.
 
 ## Usage
 

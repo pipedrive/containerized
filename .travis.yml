@@ -27,6 +27,8 @@ notifications:
     on_success: change
     on_failure: change
 
-script: "npm run-script test"
+script: "npm run-script test-travis"
+
+after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
 
 sudo: false

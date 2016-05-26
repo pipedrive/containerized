@@ -4,8 +4,7 @@ var containerized = null,
 	hostname = require('./lib/hostname')();
 
 module.exports = function(callback) {
-	var returnVal,
-		err,
+	var err,
 		cgroups = '';
 	
 	if (typeof callback !== 'function') {
@@ -17,17 +16,17 @@ module.exports = function(callback) {
 		if (child_process.execSync) {
 			// sync (node > 0.10.x)
 			try {
-				cgroups = child_process.execSync(cmd);
+				cgroups = child_process.execSync(cmd());
 			} catch (e) {
 				err = e;
 			}
-			returnVal = determine(cgroups.toString('utf8'));
-			callback(err, returnVal);
-			return returnVal;
+			containerized = !!determine(cgroups.toString('utf8'));
+			callback(err, containerized);
+			return containerized;
 		} else {
 			// async (node <= 0.10.x)
-			child_process.exec(cmd, function(err, data) {
-				containerized = determine(data);
+			child_process.exec(cmd(), function(err, data) {
+				containerized = !!determine(data);
 				callback(err, containerized);
 			});
 			return null;
@@ -35,7 +34,7 @@ module.exports = function(callback) {
 		
 	} else {
 		// already determined. use cache.
-		callback(null, containerized)
+		callback(null, containerized);
 		return containerized;
 	}
 
