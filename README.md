@@ -2,12 +2,26 @@
 
 # Containerized
 
-Detect whether your Node.js process is containerized — e.g. whether it runs inside a Docker container.
+Detect whether your Node.js process is containerized — e.g. whether it runs inside a Docker container. Works with all Node.js versions >= 0.10.x.
 
 ## Usage
 
 ```
 npm install containerized
+```
+
+### Node versions 0.12, 4.x, 5.x, 6.x, ...
+
+Starting from node 0.12.x, where child_process.execSync is available, containerized offers synchronous interface, so it will be a lot easier to use.
+
+```javascript
+var containerized = require('containerized');
+
+if (containerized()) {
+	console.log('I am running inside a Docker container.');
+} else {
+	console.log('I am NOT running inside a Docker container.');
+}
 ```
 
 ### In node <= v0.10.x
@@ -26,29 +40,17 @@ containerized(function(err, result) {
 });
 ```
 
-For achieving a synchronous interface in Node <= 0.10, use [deasync](https://www.npmjs.com/package/deasync) module:
+For synchronous interface in Node <= 0.10, wrap it in [deasync](https://www.npmjs.com/package/deasync) module:
 ```javascript
 var deasync = require('deasync');
 var containerized = deasync(require('containerized'));
 
-if (containerized()) {
-	...
-}
-```
-
-### In node >= v0.12.x
-
-Starting from node 0.12.x, where child_process.execSync is available, containerized offers synchronous interface, so it will be a lot easier to use.
-
-```javascript
-var containerized = require('containerized');
-
+// then you can:
 if (containerized()) {
 	console.log('I am running inside a Docker container.');
-} else {
-	console.log('I am NOT running inside a Docker container.');
 }
 ```
+
 
 ## Licence
 
