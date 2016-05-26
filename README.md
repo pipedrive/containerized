@@ -10,7 +10,7 @@ Detect whether your Node.js process is containerized — e.g. whether it runs in
 npm install containerized
 ```
 
-### Node versions 0.12, 4.x, 5.x, 6.x, ...
+### Node.js versions 0.12, 4.x, 5.x, 6.x, ...
 
 Starting from node 0.12.x, where child_process.execSync is available, containerized offers synchronous interface, so it will be a lot easier to use.
 
@@ -24,7 +24,7 @@ if (containerized()) {
 }
 ```
 
-### In node <= v0.10.x
+### In Node.js 0.10.x
 
 Up until node 0.10.x, containerized offers only async way of fetching whether the process is containerized in a container or not.
 
