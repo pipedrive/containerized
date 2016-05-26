@@ -2,7 +2,7 @@
 
 # Containerized
 
- * Lets you detect whether your Node.js process runs inside a Docker container or not.
+ * **Detect whether your Node.js process runs inside a Docker container or not**
  * Detection is based on existence of Docker-specific cgroups
  * Well tested (aiming at 100% line, function, statement and branch coverage)
  * Works with all Node.js versions >= 0.10.x.
