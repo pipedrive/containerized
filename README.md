@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/containerized.svg)](http://badge.fury.io/js/containerized) [![Build Status](https://travis-ci.org/pipedrive/containerized.svg?branch=master)](https://travis-ci.org/pipedrive/containerized)
+[![npm version](https://badge.fury.io/js/containerized.svg)](http://badge.fury.io/js/containerized) [![Build Status](https://travis-ci.org/pipedrive/containerized.svg?branch=master)](https://travis-ci.org/pipedrive/containerized) [![Coverage Status](https://coveralls.io/repos/github/pipedrive/containerized/badge.svg?branch=master)](https://coveralls.io/github/pipedrive/containerized?branch=master)
 
 # Containerized
 
