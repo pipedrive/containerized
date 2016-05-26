@@ -13,6 +13,9 @@ var assert = require('assert'),
 	};
 
 var mockContainerAsync = _.extend({}, mockContainer, {
+	child_process: {
+		execSync: undefined
+	},
 	'./lib/cmd': function() {
 		return 'echo "' + mockContainer.cgroups + '"';
 	},
@@ -22,6 +25,9 @@ var mockContainerAsync = _.extend({}, mockContainer, {
 });
 
 var mockNoContainerAsync = _.extend({}, mockNoContainer, {
+	child_process: {
+		execSync: undefined
+	},
 	'./lib/cmd': function() {
 		return 'echo "' + mockNoContainer.cgroups + '"';
 	},
