@@ -41,5 +41,5 @@ module.exports = function(callback) {
 };
 
 function determine(data) {
-	return data.match(new RegExp('[0-9]+\:[a-z_-]+\:\/docker\/' + hostname + '[0-9a-z]+', 'i')) !== null;
+	return data.match(new RegExp('[0-9]+\:[a-z_-]+\:(\/docker-ce)?\/docker?\/' + hostname + '[0-9a-z]+', 'i')) !== null;
 }
