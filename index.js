@@ -16,7 +16,9 @@ module.exports = function(callback) {
 		if (child_process.execSync) {
 			// sync (node > 0.10.x)
 			try {
-				cgroups = child_process.execSync(cmd());
+				cgroups = child_process.execSync(cmd(), {
+    					stdio: 'ignore'
+				});
 			} catch (e) {
 				err = e;
 			}
