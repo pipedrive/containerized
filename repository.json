@@ -2,5 +2,6 @@
   "name": "containerized",
   "description": "Detect whether your Node.js process runs inside a Docker container or not",
   "owner": "Core Services",
-  "type": "library"
+  "type": "library",
+  "status": "released"
 }
