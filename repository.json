@@ -1,6 +1,6 @@
 {
   "name": "containerized",
   "description": "Detect whether your Node.js process runs inside a Docker container or not",
-  "owner": "Pipedrive",
+  "owner": "Core Services",
   "type": "library"
 }
