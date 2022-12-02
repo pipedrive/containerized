@@ -1,6 +1,6 @@
 [![npm version](https://badge.fury.io/js/containerized.svg)](http://badge.fury.io/js/containerized) [![Build Status](https://travis-ci.org/pipedrive/containerized.svg?branch=master)](https://travis-ci.org/pipedrive/containerized) [![Coverage Status](https://coveralls.io/repos/github/pipedrive/containerized/badge.svg?branch=master)](https://coveralls.io/github/pipedrive/containerized?branch=master)
 
-# Containerized
+# Containerized - DEPRECATED (You can use following package instead: https://github.com/sindresorhus/is-docker)
 
  * **Detect whether your Node.js process runs inside a Docker container or not**
  * Detection is based on existence of Docker-specific cgroups
